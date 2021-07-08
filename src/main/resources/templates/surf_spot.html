@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Surf spot checker</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/surf_spots">Surf Spots</a></li>
+            <li><a href="/about">about</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <h1 th:text="${surf_spot.name}"></h1>
+        <div class="surf_spots">
+            <div class="surf_spot">
+                <h2>
+                    Locals
+                </h2>
+                <p th:text="${surf_spot.locals}"></p>
+            </div>
+            <div class="surf_spot">
+                <h2>
+                    Conditions
+                </h2>
+                <article th:text="${surf_spot.conditions}"></article>
+            </div>
+            <div class="surf_spot">
+                <h2>
+                    Beach or reef break
+                </h2>
+                <article th:text="${surf_spot.beach_or_reef_break}"></article>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+<footer>
+    Copyright 2021 Montechristo Inc.
+</footer>
+
+</html>

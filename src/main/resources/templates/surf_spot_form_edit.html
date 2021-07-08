@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Surf spot checker</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        ul {
+            max-width: 500px;
+          columns: 2;
+          -webkit-columns: 2;
+          -moz-columns: 2;
+         list-style: none;
+        }
+      </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/surf_spots">Surf Spots</a></li>
+            <li><a href="/about">about</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <form action="#" th:action="@{/surf_spots/update}" th:object="${surf_spot}" method="post">
+            <ul>
+                <li>id:</li>
+                <li>Surf Spot Name:</li>
+                <li>Link: </li>
+                <li>Description:</li>
+                <li>Image: </li>
+                <li><input type="text" th:field="*{id}" /></li>
+                <li><input type="text" th:field="*{name}" /></li>
+                <li><input type="text" th:field="*{link}" /></li>
+                <li><input type="text" th:field="*{description}" /></li>
+                <li><input type="text" th:field="*{image}" /></li>
+            </ul>
+            <div class="surf_spots">
+                <div class="surf_spot">
+                    <h2>
+                        Locals
+                    </h2>
+                    <p><input type="text" th:field="*{locals}" /></p>
+                </div>
+                <div class="surf_spot">
+                    <h2>
+                        Conditions
+                    </h2>
+                    <p><input type="text" th:field="*{conditions}" /></p>
+                </div>
+                <div class="surf_spot">
+                    <h2>
+                        Beach or reef break
+                    </h2>
+                    <p><input type="text" th:field="*{beach_or_reef_break}" /></p>
+                </div>
+            </div>
+
+            <h1><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></h1>
+        </form>
+        
+    </section>
+
+</body>
+<footer>
+    Copyright 2021 Montechristo Inc.
+</footer>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Surf spot checker</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/surf_spots">Surf Spots</a></li>
+            <li><a href="/about">about</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <h1><a href="/surf_spots/new">Create a new Surf Spot location</a></h1>
+        <div class="surf_spots">
+            <tr th:each="surfSpot: ${surfSpots}">
+                <div class="surf_spot">
+                    <h2 th:text="${surfSpot.name}"></h2>
+                    <a th:href="@{/surf_spots/{id}(id=${surfSpot.id})}">
+                        <img th:src="${surfSpot.image}" />
+                    </a>
+                    <div th:text="${surfSpot.description}"></div>
+                    <form action="#" th:action="@{/surf_spots/delete/{id}(id=${surfSpot.id})}" th:object="${surfSpot}" method="post">
+                        <h1><input type="submit" value="Delete" /> </h1>
+                    </form>
+                    <a  th:href="@{/surf_spots/edit/{id}(id=${surfSpot.id})}">
+                        <h1><input type="button" value="Edit" /> </h1>
+                    </a>
+                </div>
+            </tr>
+
+        </div>
+
+    </section>
+
+
+</body>
+<footer>
+    Copyright 2021 Montechristo Inc.
+</footer>
+
+</html>

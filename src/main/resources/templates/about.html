@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+    <meta charset='UTF-8'>
+    <title>Surf spot checker</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head><body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/surf_spots">Surf Spots</a></li>
+        <li><a href="/about">about</a></li>
+    </ul>
+</nav>
+<section class="content">
+    <div class="content">
+            <div class="about">
+                
+
+                <div class="surf-spot">
+                    <div class="surf-spot-img"></div>
+
+                    <div class="img-text">
+                        <h1>
+                            About
+                        </h1>
+                        <article th:text = "${about.text}">
+        
+                        </article>
+                        <img th:src="${about.image}" />
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+  </section>
+    
+
+</body><footer>
+    Copyright 2021 Montechristo Inc.
+</footer></html>
